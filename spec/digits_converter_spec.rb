@@ -34,5 +34,17 @@ describe DigitsConverter do
     it 'converts 0' do
       expect(@converter.convert(0)).to eq('zero')
     end
+
+    it 'converts thousands' do
+      expect(@converter.convert(1221)).to eq('one thousand two hundred twenty one')
+    end
+
+    it 'converts delimiters of 1000' do
+      expect(@converter.convert(1000)).to eq('one thousand')
+    end
+
+    it 'converts millions' do
+      expect(@converter.convert(1_100_000)).to eq('one million one hundred thousand')
+    end
   end
 end
