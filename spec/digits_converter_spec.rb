@@ -20,7 +20,7 @@ describe DigitsConverter do
     end
 
     it 'converts delimiters of 10' do
-      expect(@converter.convert(35)).to eq('thirty')
+      expect(@converter.convert(30)).to eq('thirty')
     end
 
     it 'converts hundreds' do
@@ -29,6 +29,10 @@ describe DigitsConverter do
 
     it 'converts delimiters of 100' do
       expect(@converter.convert(300)).to eq('three hundred')
+    end
+
+    it 'converts 0' do
+      expect(@converter.convert(0)).to eq('zero')
     end
   end
 end
